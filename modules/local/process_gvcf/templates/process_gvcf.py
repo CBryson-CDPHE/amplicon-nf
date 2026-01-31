@@ -162,7 +162,7 @@ def main():
         # https://github.com/freebayes/freebayes/issues/562
         # just skips the problematic records, so not an actual fix
         contig_length = len(contig_depth[record.chrom])
-        if (record.ref == "." or v_end > contig_length or (is_gvcf_ref and v_start != v_end):
+        if record.ref == "." or v_end > contig_length or (is_gvcf_ref and v_start != v_end):
             print(f"Warning: Skipping malformed VCF record at {record.chrom}:{record.pos} "
                   f"(REF={record.ref}, v_start={v_start}, v_end={v_end}, contig_length={contig_length}). ",
                   file=sys.stderr)
