@@ -159,7 +159,7 @@ def main():
 
         # handle freebayes gvcf bug with multi-fasta references where chromosome
         # boundary positions are incorrectly assigned to the next chromosome
-        # https://github.com/freebayes/freebayes/issues/562
+        # https://github.com/freebayes/freebayes/issues/561
         # just skips the problematic records, so not an actual fix
         contig_length = len(contig_depth[record.chrom])
         if record.ref == "." or v_end > contig_length or (is_gvcf_ref and v_start != v_end):
